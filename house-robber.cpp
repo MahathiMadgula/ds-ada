@@ -13,7 +13,7 @@ public:
         vector<long> dp(n+1,0);
         dp[1]=nums[0];dp[2]=nums[1];
         long ans=max(nums[0],nums[1]);
-        for(int i=3;i<=n;i++){
+        for(int i=3;i<=len;i++){
             dp[i]=nums[i-1];
             dp[i]=max(dp[i]+dp[i-2],dp[i]+dp[i-3]);
             ans=max(ans,dp[i]);
